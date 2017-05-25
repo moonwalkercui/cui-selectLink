@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>CuiCity多级联动</title>
+  <script src="../jquery.min.js"></script>
+  <script src="cui-city.js"></script>
+</head>
+<body>
+  <div class="cui-city"></div>
+
+  <hr>
+  <div class="cui-city2"></div>
+
+  <script type="text/javascript">
+    $(function(){
+      $('.cui-city').CuiCity({ "selectItems" : [ 4 , 87 , 1327 ] ,"class" : "btn_submit"});
+      $('.cui-city2').CuiCity({ "size" : 2  , "url" : "/getcity.html" });
+    });
+   
+  </script>
+</body>
+</html>
