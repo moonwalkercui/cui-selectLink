@@ -7,7 +7,7 @@
 *
 */
 ;(function($){
-  var CuiCity = function(opt,ele){
+  var CuiSelectLink = function(opt,ele){
     this.data = null;
     this.$ele = ele;
     this.index = this.$ele.index();
@@ -18,7 +18,7 @@
     this.initArea(this.option.selectItems);
 
   };
-  CuiCity.prototype = {
+  CuiSelectLink.prototype = {
     opt : {
       "selectItems"   : 0, // 默认选中的区域，可为数字数组
       "url"       : false, // 获取数据的连接
@@ -84,9 +84,9 @@
     }
   };
   $.fn.extend({
-    CuiCity : function(opt){
+    CuiSelectLink : function(opt){
       this.each(function () {
-        new CuiCity(opt,$(this));
+        new CuiSelectLink(opt,$(this));
       })
     }
   });

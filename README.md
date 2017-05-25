@@ -1,4 +1,4 @@
-# selectLink
+# cui-selectLink
 
 ## 支持动态多级联动JQ插件
 * 支持自定义样式class
@@ -11,17 +11,17 @@
 ## HTML规范
 	```
 	<script src="../jquery.min.js"></script>
-  	<script src="cui-city.js"></script>
+  	<script src="cui-selectLink.js"></script>
   	<script">
 	$(function(){
-      $('.cui-city').CuiCity({ "selectItems" : [ 4 , 87 , 1327 ] ,"class" : "btn_submit"});
-      $('.cui-city2').CuiCity({ "size" : 2  , "url" : "/getcity.html" });
+      $('.cui-city').CuiSelectLink({ "selectItems" : [ 4 , 87 , 1327 ] ,"class" : "btn_submit"});
+      $('.cui-city2').CuiSelectLink({ "size" : 2  , "url" : "/getcity.html" });
     });
     </script>
     ```
 ## 参数规范
 
-* 	js调用：$(选择器).CuiCity({参数});
+* 	js调用：$(选择器).CuiSelectLink({参数});
 *	"selectItems"   : 0, // 默认选中的区域，可以为数组，如'[ 4 , 87 , 1327 ]'
 *   "url"       : false, // 获取json数据的连接 自行搭建
 *   "size"      : 4, // 联动的select个数

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>CuiCity多级联动</title>
   <script src="../jquery.min.js"></script>
-  <script src="cui-city.js"></script>
+  <script src="cui-selectLink.js"></script>
 </head>
 <body>
   <div class="cui-city"></div>
@@ -14,8 +14,8 @@
 
   <script type="text/javascript">
     $(function(){
-      $('.cui-city').CuiCity({ "selectItems" : [ 4 , 87 , 1327 ] ,"class" : "btn_submit"});
-      $('.cui-city2').CuiCity({ "size" : 2  , "url" : "/getcity.html" });
+      $('.cui-city').CuiSelectLink({ "selectItems" : [ 4 , 87 , 1327 ] ,"class" : "btn_submit"});
+      $('.cui-city2').CuiSelectLink({ "size" : 2  , "url" : "/getcity.html" });
     });
    
   </script>
