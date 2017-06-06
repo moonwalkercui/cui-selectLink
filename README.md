@@ -9,16 +9,20 @@
 * 动态多级联动 多级城市 JQ插件 select linkage jq
 
 ## HTML规范
-	```
+	
 	<script src="../jquery.min.js"></script>
   	<script src="cui-selectLink.js"></script>
-  	<script">
+
+    <div class="cui-city"></div>
+    <div class="cui-city"></div>
+    
+  	<script>
 	$(function(){
       $('.cui-city').CuiSelectLink({ "selectItems" : [ 4 , 87 , 1327 ] ,"class" : "btn_submit"});
       $('.cui-city2').CuiSelectLink({ "size" : 2  , "url" : "/getcity.html" });
     });
     </script>
-    ```
+    
 ## 参数规范
 
 * 	js调用：$(选择器).CuiSelectLink({参数});
