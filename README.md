@@ -14,8 +14,8 @@
   	<script src="cui-selectLink.js"></script>
 
     <div class="cui-city"></div>
-    <div class="cui-city"></div>
-    
+    <div class="cui-city2"></div>
+
   	<script>
 	$(function(){
       $('.cui-city').CuiSelectLink({ "selectItems" : [ 4 , 87 , 1327 ] ,"class" : "btn_submit"});
