@@ -1,9 +1,8 @@
 /*
 * 支持动态多级联动
 * 支持自定义样式
-* 如果使用自定义sql数据，请自定义字段，并更改本人中的area_id（主键）area_parent_id（上级id）area_name（名称）
+* 如果使用自定义sql数据，请自定义字段，并更改本人中的id（主键）parent_id（上级id）name（名称）
 * 请自行配置uirl
-*
 *
 */
 ;(function($){
@@ -20,10 +19,11 @@
   };
   CuiSelectLink.prototype = {
     opt : {
-      "selectItems"   : 0, // 默认选中的区域，可为数字数组
+      "selectItems"   : 0, // 默认选中的区域，多项的话为id的整形数组
       "url"       : false, // 获取数据的连接
-      "size"      : 4, // 几级联动
-      "class"     : "c-select", // select的类名
+      "size"      : 3, // 联动的select个数 默认为3
+      "class"     : "c-select", // 生成select的类名
+      "name"      : "c-select", // 生成select元素的name
     },
     //生成三个select框,设置省份列表,并选中默认参数里的省市区
     init : function(){
@@ -31,7 +31,7 @@
       for(var i = 0;i<this.option.size;i++){
         var $select = $('<select></select>');
         var $option = $('<option></option>');
-        $select.attr('name','c-select'+i).addClass(this.option.class);
+        $select.attr('name',this.option.name+i).addClass(this.option.class);
         $option.text('请选择').appendTo($select);
         $select.appendTo(this.$ele);
         $select.bind('change',function () {
@@ -61,10 +61,10 @@
           selected = this.option.selectItems,
           dom ='';
       $.each(data,function(i,n){
-        if(selected[$ele.index()] == n.area_id && $.isArray(_this.option.selectItems)){
-          dom += "<option value='"+n.area_id+"' data-pid='"+n.area_parent_id+"' selected>"+n.area_name+"</option>";
+        if(selected[$ele.index()] == n.id && $.isArray(_this.option.selectItems)){
+          dom += "<option value='"+n.id+"' data-pid='"+n.parent_id+"' selected>"+n.name+"</option>";
         }else{
-          dom += "<option value='"+n.area_id+"' data-pid='"+n.area_parent_id+"'>"+n.area_name+"</option>";
+          dom += "<option value='"+n.id+"' data-pid='"+n.parent_id+"'>"+n.name+"</option>";
         }
       });
       $ele.append(dom);
@@ -77,7 +77,6 @@
       if(id == '') return;
       this.optionFresh(this.$ele.children().slice(lev,this.option.size));
       if(this.option.size > lev) this.getData(id , $next);
-      // this.$ele.children().eq(lev+1).css({ "color": "#ff0011", "background": "blue" });return;
     },
     optionFresh : function($doms){
       $doms.html('<option value="">请选择</option>');
