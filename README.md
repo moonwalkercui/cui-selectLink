@@ -9,7 +9,7 @@
 * 动态多级联动 多级城市 JQ插件 select linkage jq
 
 ## JS调用
-  
+  ``
   <script src="../jquery.min.js"></script>
   <script src="cui-selectLink.js"></script>
 
@@ -22,10 +22,11 @@
     $('.cui-city2').CuiSelectLink({ "size" : 2  , "url" : "/getcity.html" });
   });
   </script>
-    
+    ``
 ## 参数规范
 
-* 	js调用：$(选择器).CuiSelectLink({参数});
+元素调用："$(选择器).CuiSelectLink({参数});"
+
 *	  "selectItems"   : 0, // 默认选中的区域，为数组，如'[ 4 , 87 , 1327 ]'
 *   "url"       : false, // 获取json数据的连接 自行搭建
 *   "size"      : 3, // 联动的select个数 默认为3
